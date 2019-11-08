@@ -80,8 +80,8 @@ const nav = [
 	  title: null,
 	  items: [
 		{ key: '#introduction', name: 'Introduction' },
-		{ key: '#introduction2', name: 'Authentication' },
-		{ key: '#introduction3', name: 'Errors' },
+		{ key: '#authentication', name: 'Authentication' },
+		{ key: '#errors', name: 'Errors' },
 	  ],
 	},
 	{
@@ -101,19 +101,19 @@ const nav = [
 ]
 
 const langs = [
-	{ key: 'nodejs', language: 'javascript', name: 'Node.js', repo: 'meterapi/meterapi-node', installCmd: 'npm install meterapi' },
-	{ key: 'ruby', name: 'Ruby', repo: 'meterapi/meterapi-ruby', installCmd: 'gem install meterapi' },
-	{ key: 'python', name: 'Python', repo: 'meterapi/meterapi-python', installCmd: 'pip install meterapi' },
-	{ key: 'php', name: 'PHP', repo: 'meterapi/meterapi-php', installCmd: 'composer require meterapi/meterapi-php' },
-	{ key: 'java', name: 'Java', repo: 'meterapi/meterapi-java', installCmd: 'compile "com.meterapi:meterapi-java:1.0.0"' },
-	{ key: 'go', name: 'Go', repo: 'meterapi/meterapi-go', installCmd: 'go get github.com/meterapi/meterapi-go' },
-	{ key: 'dotnet', language: 'c#', name: '.NET', repo: 'meterapi/meterapi-dotnet', installCmd: 'nuget install meterapi-dotnet' },
+	{ key: 'nodejs', language: 'javascript', name: 'Node.js', repo: 'yourapp/yourapp-node', installCmd: 'npm install yourapp' },
+	{ key: 'ruby', name: 'Ruby', repo: 'yourapp/yourapp-ruby', installCmd: 'gem install yourapp' },
+	{ key: 'python', name: 'Python', repo: 'yourapp/yourapp-python', installCmd: 'pip install yourapp' },
+	{ key: 'php', name: 'PHP', repo: 'yourapp/yourapp-php', installCmd: 'composer require yourapp/yourapp-php' },
+	{ key: 'java', name: 'Java', repo: 'yourapp/yourapp-java', installCmd: 'compile "com.yourapp:yourapp-java:1.0.0"' },
+	{ key: 'go', name: 'Go', repo: 'yourapp/yourapp-go', installCmd: 'go get github.com/yourapp/yourapp-go' },
+	{ key: 'dotnet', language: 'c#', name: '.NET', repo: 'yourapp/yourapp-dotnet', installCmd: 'nuget install yourapp-dotnet' },
 ]
 
 const user = {
 	name: 'Example User',
 	detail: 'something helpful',
-	imageUrl: 'https://pbs.twimg.com/profile_images/1181341349397839881/-_-X88eu_400x400.jpg',
+	imageUrl: 'https://pbs.twimg.com/profile_images/1115644092329758721/AFjOr-K8_400x400.jpg',
 }
 
 const Example = () => (
@@ -124,7 +124,6 @@ const Example = () => (
 				<Description>
 					{description}
 				</Description>
-				<AttributeTable attributes={attributes} />
 				<FeedbackWidget />
 			</LeftColumn>
 
@@ -134,15 +133,41 @@ const Example = () => (
 					<Request title="Base URL" code="https://api.company.com" />
 					<SelectClientLibrary />
 				</Subsection>
-				<Subsection>
-					<Request title="A Code Example" code={code} withPrompt />
-					<Response title="Some cool JSON" code={jsonCode} />
-				</Subsection>
+			</RightColumn>
+		</SectionWrapper>
+		<SectionWrapper id="authentication">
+			<LeftColumn>
+				<Title>Authentication</Title>
+				<Description>
+					{description}
+				</Description>
+				<AttributeTable attributes={attributes} />
+				<FeedbackWidget />
+			</LeftColumn>
+
+			<RightColumn>
 				<Subsection>
 					<Response title="Something you should know">
 						<p>Quisque eget elit lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 						<p>Quisque eget elit lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 					</Response>
+				</Subsection>
+			</RightColumn>
+		</SectionWrapper>
+		<SectionWrapper id="Errors">
+			<LeftColumn>
+				<Title>Some Errors</Title>
+				<Description>
+					{description}
+				</Description>
+				<AttributeTable attributes={attributes} />
+				<FeedbackWidget />
+			</LeftColumn>
+
+			<RightColumn>
+				<Subsection>
+					<Request title="A Code Example" code={code} withPrompt />
+					<Response title="Some cool JSON" code={jsonCode} />
 				</Subsection>
 				<Table title="Possible Errors" data={possibleErrors} />
 			</RightColumn>
